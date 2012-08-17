@@ -14,9 +14,13 @@
       (match-letters? "happy" "happy") => true)
     (fact "should be true with letters 'h' 'a' 'p' 'p' 'y' 's'"
       (match-letters? "happys" "happy") => true)
+    (fact "should be false with letter 'b'"
+      (match-letters? "hapb" "b") => true)
     (fact "should be true with capital letters 'H' 'a' 'P' 'p' 'y' 's'"
       (match-letters? "HaPpys" "happy") => true)
     (fact "should be false with letter 'b'"
       (match-letters? "happy" "b") => false)
+    (fact "should be false with letter 'happb'"
+      (match-letters? "happy" "happb") => false)
   )
 )

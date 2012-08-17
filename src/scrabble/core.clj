@@ -6,7 +6,7 @@
 
 (defn process-file [file-name line-func letters]
   (with-open [rdr (BufferedReader. (FileReader. file-name))]
-    (doseq [solution (filter #(line-func letters %) (line-seq rdr))])
+    (into [] (filter #(line-func letters %) (line-seq rdr)))
   )
 )
 
