@@ -27,8 +27,9 @@
   (println (process-file "/usr/share/dict/words" match-letters? letters)))
 
 (defn -main [& args]
-  (if (rest args)
-    (println (str "You passed in this value: " (first (rest args))))
-    (println "Usage: cmdline VAlUE"))
-    (main (first (rest args))))
+  (if (empty? (rest args))
+    ((println "Usage: scrabble LETTERS")
+    (System/exit 1))
+   ((main (first (rest args)))
+    (System/exit 0))))
 
